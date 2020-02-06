@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <style>
+    p{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        }
+    input{
+        width: 200px;
+        height: 30px;
+    }
+    select{
+        width: 120px;
+        height: 30px;
+    }
+    </style>
+    <script>
+    function calcular(){
+        var v1 = document.getElementById("valor1").value;
+        var v2 = document.getElementById("valor2").value;
+        var opera = document.getElementById("operation").value;
+
+        if(opera == "som"){
+            alert(parseInt(v1) + parseInt(v2));
+        } else if (opera == "sub"){
+            alert(parseInt(v1) - parseInt(v2));
+        } else if (opera == "mul"){
+            alert(parseInt(v1) * parseInt(v2));
+        } else if (opera == "div"){
+            alert(parseInt(v1) / parseInt(v2));
+        }
+    }
+    </script>
+</head>
+<body style="display:flex; flex-direction:column; justify-content: center; align-items: center;">
+    <p>Insira o primeiro valor:</p>
+    <input type="number" id="valor1">
+    <p>Insira o segundo valor:</p>
+    <input type="number" id="valor2">
+
+    <p>Selecione a operação:</p>
+    <select id="operation">
+        <option value="som">Soma</option>
+        <option value="sub">Subtração</option>
+        <option value="mul">Multiplicação</option>
+        <option value="div">Divisão</option>
+    </select>
+</br>
+    <input type="submit" onclick="calcular();" value="Calcular">
+</body>
+</html>
